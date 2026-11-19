@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: black;
+    overflow-x: hidden; /* Horizontal scrollbar rokne ke liye */
+}
+
+.bg {
+    position: fixed;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    object-fit: cover;
+    z-index: 0; /* -1 ki jagah 0 */
+    opacity: 0.8;
+    animation: floating 6s ease-in-out infinite;
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Form aur text ko image ke upar laane ke liye */
+    max-width: 80%;
+    padding: 34px;
+    margin: auto;
+}
+
+.container h1,
+.container p {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Taaki image par text clearly padha jaye */
+}
+
+p {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+input,
+textarea {
+    width: 80%;
+    margin: 11px auto;
+    padding: 7px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 6px;
+    outline: none;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn {
+    color: white;
+    background: purple;
+    padding: 8px 20px;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.submitMsg {
+    color: #4ade80; /* Light green taaki dark background par clearly dikhe */
+    font-weight: bold;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
